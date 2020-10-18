@@ -25,6 +25,10 @@ export default function OrphanagesMap(){
     });
   });
 
+  function handleNavigateToListOrphanages(){
+    navigation.navigate('OrphanageList');
+  }
+
   function handleNavigateToOrphanageDetails(id: number){
     navigation.navigate('OrphanageDetails', { id });
   }
@@ -63,14 +67,13 @@ export default function OrphanagesMap(){
 
       <View style={styles.footer}>
         <Text style={styles.footerText}>{orphanages.length} orfanatos encontrados</Text>
+        <RectButton style={styles.orphanageListButton} onPress={handleNavigateToListOrphanages}>
+          <Feather name="list" size={20} color="#fff"></Feather>
+        </RectButton>
         <RectButton style={styles.createOrphanageButton} onPress={handleNavigateToCreateOrphanage}>
           <Feather name="plus" size={20} color="#fff"></Feather>
         </RectButton>
       </View>
-
-      <RectButton style={styles.orphanageListButton} onPress={handleNavigateToCreateOrphanage}>
-        <Feather name="list" size={20} color="#fff"></Feather>
-      </RectButton>
     </View>
   );
 }
@@ -144,14 +147,16 @@ const styles = StyleSheet.create({
   },
 
   orphanageListButton:{
+    display: 'flex',
     width: 56,
     height: 56,
     backgroundColor: '#15c3d6',
     borderRadius: 20,
-    
+
     justifyContent: 'center',
     alignItems: 'center',
 
-    marginBottom: 10,
+    marginBottom: 120,
+    marginRight: -165,
   }
 });
