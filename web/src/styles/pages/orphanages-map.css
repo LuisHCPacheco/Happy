@@ -64,6 +64,27 @@
   background: #17d6eb;
 }
 
+#page-map .list-orphanages{
+  position: absolute;
+  right: 40px;
+  bottom: 120px;
+
+  z-index: 10;
+
+  width: 64px;
+  height: 64px;
+  background: #15c3d6;
+  border-radius: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#page-map .list-orphanages:hover{
+  background: #17d6eb;
+}
+
 #page-map .map-popup .leaflet-popup-content-wrapper{
   background: rgba(255,255,255,0.8);
   border-radius: 20px;

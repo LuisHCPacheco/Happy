@@ -10,6 +10,9 @@ export default class Orphanage{
   @Column()
   name: string;
 
+  // @Column()
+  // wppNumber: number;
+
   @Column()
   latitude: number;
 

@@ -2,7 +2,6 @@ import React, { useState, FormEvent, ChangeEvent } from "react";
 import { Map, Marker, TileLayer } from 'react-leaflet';
 import { LeafletMouseEvent } from 'leaflet'
 import { useHistory } from "react-router-dom";
-
 import { FiPlus } from "react-icons/fi";
 
 import '../styles/pages/create-orphanage.css';
@@ -16,6 +15,7 @@ export default function CreateOrphanage() {
   const [position, setPosition] = useState({ latitude: 0, longitude: 0 });
 
   const [name, setName] = useState('');
+  const [wppNumber, setWppNumber] = useState('');
   const [about, setAbout] = useState('');
   const [instructions, setInstructions] = useState('');
   const [opening_hours, setOpeningHours] = useState('');
@@ -96,14 +96,17 @@ export default function CreateOrphanage() {
                   position={[position.latitude,position.longitude]} 
                 />
               ) }
-
-              {/*  */}
             </Map>
 
             <div className="input-block">
               <label htmlFor="name">Nome</label>
               <input id="name" value={name} onChange={event => setName(event.target.value)} />
             </div>
+
+            {/* <div className="input-block">
+              <label htmlFor="wppNumber">Whatsapp</label>
+              <input id="wppNumber" value={wppNumber} onChange={event => setWppNumber(event.target.value)} />
+            </div> */}
 
             <div className="input-block">
               <label htmlFor="about">Sobre <span>Máximo de 300 caracteres</span></label>

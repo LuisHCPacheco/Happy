@@ -13,6 +13,7 @@ interface Orphanage {
   latitude: number;
   longitude: number;
   name: string;
+  wppNumber: number;
   about: string;
   instructions: string;
   opening_hours: string;

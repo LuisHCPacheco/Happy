@@ -29,6 +29,7 @@ export default{
   async create(request: Request, response: Response){
     const {
       name,
+      // wppNumber,
       latitude,
       longitude,
       about,
@@ -46,6 +47,7 @@ export default{
 
     const data = {
       name,
+      // wppNumber,
       latitude,
       longitude,
       about,
@@ -57,6 +59,7 @@ export default{
 
     const schema = Yup.object().shape({
       name: Yup.string().required(),
+      // wppNumber: Yup.number().required().max(11),
       latitude: Yup.number().required(),
       longitude: Yup.number().required(),
       about: Yup.string().required().max(300),
