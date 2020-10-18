@@ -48,12 +48,16 @@ export default function OrphanageDetails() {
             <View style={styles.list}>
               <Text style={styles.content}>{orphanage.name}</Text>
             
-              <RectButton style={styles.wppButton} onPress={() => handleOpenWpp(orphanage.wppNumber)}>
-                <FontAwesome name="whatsapp" size={30} color="#FFF" />
-              </RectButton>
-              <RectButton style={styles.infoButton} onPress={() => handleNavigateToOrphanageDetails(orphanage.id)}>
-                <FontAwesome name="info" size={30} color="#FFF" />
-              </RectButton>
+              <View style={styles.buttons}>
+                <RectButton style={styles.wppButton} onPress={() => handleOpenWpp(orphanage.wppNumber)}>
+                  <FontAwesome name="whatsapp" size={30} color="#FFF" />
+                </RectButton>
+                <RectButton style={styles.infoButton} onPress={() => handleNavigateToOrphanageDetails(orphanage.id)}>
+                  <FontAwesome name="info" size={30} color="#FFF" />
+                </RectButton>
+              </View>
+
+              <View style={styles.separator}/>
             </View>
           )
         })}
@@ -72,7 +76,6 @@ const styles = StyleSheet.create({
   },
 
   list:{
-    flexDirection: 'row',
     justifyContent: 'space-between',
     marginTop: 20,
   },
@@ -83,28 +86,34 @@ const styles = StyleSheet.create({
     fontFamily: 'Nunito_700Bold',
 
     marginLeft: 5,
-    marginTop: 5,
+
+    textAlign: 'center',
+  },
+
+  buttons:{
+    justifyContent: 'space-between',
+    flexDirection: 'row',
   },
 
   wppButton:{
-    width: 46,
+    width: 80,
     height: 46,
     backgroundColor: '#3CDC8C',
     borderRadius: 15,
 
-    marginRight: -40,
+    marginLeft: 100,
 
     justifyContent: 'center',
     alignItems: 'center',
   },
 
   infoButton:{
-    width: 46,
+    width: 80,
     height: 46,
     backgroundColor: '#15c3d6',
     borderRadius: 15,
 
-    marginRight: 10,
+    marginRight: 100,
 
     justifyContent: 'center',
     alignItems: 'center',
@@ -115,5 +124,12 @@ const styles = StyleSheet.create({
     color: '#5c8599',
     lineHeight: 24,
     marginTop: 16,
+  },
+
+  separator:{
+    height: 0.8,
+    width: '100%',
+    backgroundColor: '#D3E2E6',
+    marginVertical: 10,
   }
 })
