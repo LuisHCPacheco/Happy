@@ -67,6 +67,10 @@ export default function OrphanagesMap(){
           <Feather name="plus" size={20} color="#fff"></Feather>
         </RectButton>
       </View>
+
+      <RectButton style={styles.orphanageListButton} onPress={handleNavigateToCreateOrphanage}>
+        <Feather name="list" size={20} color="#fff"></Feather>
+      </RectButton>
     </View>
   );
 }
@@ -137,5 +141,17 @@ const styles = StyleSheet.create({
     
     justifyContent: 'center',
     alignItems: 'center',
+  },
+
+  orphanageListButton:{
+    width: 56,
+    height: 56,
+    backgroundColor: '#15c3d6',
+    borderRadius: 20,
+    
+    justifyContent: 'center',
+    alignItems: 'center',
+
+    marginBottom: 10,
   }
 });

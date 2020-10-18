@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useHistory, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 import '../styles/pages/list-orphanages.css';
@@ -11,10 +11,10 @@ import { FaWhatsapp } from "react-icons/fa";
 interface Orphanage{
   id: number;
   name: string;
+  wppNumber: string;
 }
 
 function ListOrphanages() {
-  const history = useHistory();
   const [orphanages, setOrphanages] = useState<Orphanage[]>([]);
 
   useEffect(() => {
@@ -41,7 +41,7 @@ function ListOrphanages() {
                       </FiInfo>
                     </Link>
 
-                    <a href={`https://api.whatsapp.com/`} className="wpp-icon">
+                    <a target="_blank" href={`https://api.whatsapp.com/send?phone=${orphanage.wppNumber}`} className="wpp-icon">
                       <FaWhatsapp size={30} color="#FFF" />
                     </a>
                   </h2>

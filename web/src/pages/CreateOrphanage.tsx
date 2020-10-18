@@ -15,8 +15,8 @@ export default function CreateOrphanage() {
   const [position, setPosition] = useState({ latitude: 0, longitude: 0 });
 
   const [name, setName] = useState('');
-  const [wppNumber, setWppNumber] = useState('');
   const [about, setAbout] = useState('');
+  const [wppNumber, setWppNumber] = useState('');
   const [instructions, setInstructions] = useState('');
   const [opening_hours, setOpeningHours] = useState('');
   const [open_on_weekends, setOpenOnWeekends] = useState(true);
@@ -55,6 +55,7 @@ export default function CreateOrphanage() {
     const data = new FormData();
     data.append('name', name);
     data.append('about', about);
+    data.append('wppNumber', wppNumber);
     data.append('latitude', String(latitude));
     data.append('longitude', String(longitude));
     data.append('instructions', instructions);
@@ -116,6 +117,11 @@ export default function CreateOrphanage() {
                 value={about} 
                 onChange={event => setAbout(event.target.value)}  
               />
+            </div>
+
+            <div className="input-block">
+              <label htmlFor="wppNumber">Whatsapp</label>
+              <input id="wppNumber" value={wppNumber} onChange={event => setWppNumber(event.target.value)} />
             </div>
 
             <div className="input-block">

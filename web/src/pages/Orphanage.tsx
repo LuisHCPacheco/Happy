@@ -13,8 +13,8 @@ interface Orphanage {
   latitude: number;
   longitude: number;
   name: string;
-  wppNumber: number;
   about: string;
+  wppNumber: string;
   instructions: string;
   opening_hours: string;
   open_on_weekends: string;
@@ -121,10 +121,10 @@ export default function Orphanage() {
               )}
             </div>
 
-            <button type="button" className="contact-button">
+            <a type="button" target="_blank" href={`https://api.whatsapp.com/send?phone=${orphanage.wppNumber}`} className="contact-button">
               <FaWhatsapp size={20} color="#FFF" />
               Entrar em contato
-            </button>
+            </a>
           </div>
         </div>
       </main>

@@ -29,10 +29,10 @@ export default{
   async create(request: Request, response: Response){
     const {
       name,
-      // wppNumber,
       latitude,
       longitude,
       about,
+      wppNumber,
       instructions,
       opening_hours,
       open_on_weekends,
@@ -47,10 +47,10 @@ export default{
 
     const data = {
       name,
-      // wppNumber,
       latitude,
       longitude,
       about,
+      wppNumber,
       instructions,
       opening_hours,
       open_on_weekends: open_on_weekends == 'true',
@@ -59,10 +59,10 @@ export default{
 
     const schema = Yup.object().shape({
       name: Yup.string().required(),
-      // wppNumber: Yup.number().required().max(11),
       latitude: Yup.number().required(),
       longitude: Yup.number().required(),
       about: Yup.string().required().max(300),
+      wppNumber: Yup.string().required().max(11),
       instructions: Yup.string().required(),
       opening_hours: Yup.string().required(),
       open_on_weekends: Yup.boolean().required(),

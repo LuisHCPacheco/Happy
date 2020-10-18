@@ -6,10 +6,10 @@ export default{
     return{
       id: orphanage.id,
       name: orphanage.name,
-      // wppNumber: orphanage.wppNumber,
       latitude: orphanage.latitude,
       longitude: orphanage.longitude,
       about: orphanage.about,
+      wppNumber: orphanage.wppNumber,
       instructions: orphanage.instructions,
       opening_hours: orphanage.opening_hours,
       open_on_weekends: orphanage.open_on_weekends,
